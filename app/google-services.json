@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "592451495914",
-    "project_id": "fir-otp-sample",
-    "storage_bucket": "fir-otp-sample.appspot.com"
+    "project_number": "483931864344",
+    "project_id": "otp-verfications-ae66a",
+    "storage_bucket": "otp-verfications-ae66a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:592451495914:android:d50fd3ed59ce4faf43f493",
+        "mobilesdk_app_id": "1:483931864344:android:05b816c59ee9019876726d",
         "android_client_info": {
           "package_name": "com.example.otpverification"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBBcNdqyPlJt8lFB6nFss6yNMOwluwnn0I"
+          "current_key": "AIzaSyAViedb9z0ItMED4q38-6kDv2ZmFMt2-74"
         }
       ],
       "services": {

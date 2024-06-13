@@ -11,5 +11,6 @@
     <string name="didn_t_recevice_the_otp">Didn\'t recevice the OTP</string>
     <string name="verify">VERIFY</string>
     <string name="_91">+ 91</string>
+    <string name="welcome_to_dashboard">Welcome to Dashboard</string>
 
 </resources>

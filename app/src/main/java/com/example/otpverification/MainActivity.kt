@@ -35,13 +35,13 @@ class MainActivity : AppCompatActivity() {
 
 
 
-//        activityMainBinding.countyCodePicker.registerCarrierNumberEditText(activityMainBinding.etMobileNumber)
 
         activityMainBinding.etVerifyMobileNumber.setOnClickListener {
             if ( activityMainBinding.etMobileNumber.text.toString().trim().isEmpty()){
                 Toast.makeText(this@MainActivity,"Enter Your Mobile Number" ,Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }else {
+
                 selectedOtp()
             }
 
@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        otpSend()
 
 
 
@@ -57,6 +56,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun selectedOtp() {
 
+        otpSend()
+
+
+        activityMainBinding.pbProgressBar.visibility = View.VISIBLE
+        activityMainBinding.etVerifyMobileNumber.visibility = View.INVISIBLE
 
         val options = callbacks?.let {
             PhoneAuthOptions.newBuilder(authToken)
@@ -68,13 +72,18 @@ class MainActivity : AppCompatActivity() {
         }
         options?.let { PhoneAuthProvider.verifyPhoneNumber(it) }
 
+
+
+
+
     }
 
 
     private fun otpSend() {
 
-        activityMainBinding.pbProgressBar.visibility = View.VISIBLE
-        activityMainBinding.etVerifyMobileNumber.visibility = View.INVISIBLE
+
+        activityMainBinding.pbProgressBar.visibility = View.GONE
+        activityMainBinding.etVerifyMobileNumber.visibility = View.VISIBLE
 
 
         Log.d(TAG, " otpSend >>> 1$callbacks")
@@ -101,8 +110,9 @@ class MainActivity : AppCompatActivity() {
                 verificationId: String,
                 token: PhoneAuthProvider.ForceResendingToken,
             ) {
-                activityMainBinding.pbProgressBar.visibility = View.GONE
-                activityMainBinding.etVerifyMobileNumber.visibility = View.VISIBLE
+                activityMainBinding.pbProgressBar.visibility = View.VISIBLE
+                activityMainBinding.etVerifyMobileNumber.visibility = View.GONE
+
                 Log.d(TAG, "onCodeSent:$verificationId")
                 Toast.makeText(this@MainActivity," OTP is Successfully Send." ,Toast.LENGTH_SHORT).show()
 
@@ -115,8 +125,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun checkValidity(ccp: CountryCodePicker): Boolean {
-        return ccp.isValidFullNumber
-
-    }
 }

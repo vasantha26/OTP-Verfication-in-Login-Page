@@ -53,8 +53,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.ccp)
-    implementation(libs.firebase.bom)
-    //noinspection UseTomlInstead
-    implementation("com.google.firebase:firebase-auth")
+    implementation(libs.firebase.auth.v2231)
 
 }

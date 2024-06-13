@@ -13,7 +13,7 @@ import com.example.otpverification.databinding.ActivityVerifyBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthProvider
 
-class VerifyActivity : AppCompatActivity() {
+class  VerifyActivity : AppCompatActivity() {
 
     private lateinit var verifyOtpBinding: ActivityVerifyBinding
 
@@ -104,11 +104,13 @@ class VerifyActivity : AppCompatActivity() {
 
     private fun verificationClick() {
 
-        verifyOtpBinding.pbVerifyProgressBar.visibility = View.VISIBLE
-        verifyOtpBinding.bvVerify.visibility = View.INVISIBLE
+
 
 
         verifyOtpBinding.bvVerify.setOnClickListener {
+            verifyOtpBinding.pbVerifyProgressBar.visibility = View.VISIBLE
+            verifyOtpBinding.bvVerify.visibility = View.INVISIBLE
+
             if (verifyOtpBinding.inputCodeOne.text.toString().trim().isEmpty() ||
                 verifyOtpBinding.inputCodeTwo.text.toString().trim().isEmpty() ||
                 verifyOtpBinding.inputCodeThree.text.toString().trim().isEmpty() ||
